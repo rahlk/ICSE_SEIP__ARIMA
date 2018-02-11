@@ -1,0 +1,34 @@
+\begin{figure}[t!]
+\footnotesize
+\centering
+\resizebox*{\linewidth}{!}{
+\begin{tabular}{lrr}
+\bottomrule
+\multicolumn{1}{c}{\multirow{2}{*}{Sanity check}} & 
+\multicolumn{2}{c}{Discarded project count}                     \\ 
+\cmidrule{2-3} 
+& \multicolumn{1}{l}{Proprietary} & \multicolumn{1}{l}{open-source} \\ 
+\midrule
+Collaboration (Pull requests $> 0$)      & 35                               
+& 54                       \\
+Commits $> 20$                           & 68                               
+& 96                       \\
+Duration $> 1$ year                      & 12                               
+& 46                       \\
+Issues  $> 10$                           & 60                               
+& 89                       \\
+Personal purpose (\# programmers $> 8$)  & 47                               
+& 67                       \\
+Releases \textgreater 0                  & 136                              
+& 44                       \\
+S\/W development only                    & 9                                
+& 51                       \\ 
+\midrule
+Projects after filtering                 & 171                           & 
+661                       \\ 
+\bottomrule
+\end{tabular}}
+\caption{Count of projects that pass the filter. Upon completion, we are left 
+with 171 proprietary and 661 open-source projects.}
+\label{fig:sanity}
+\end{figure}

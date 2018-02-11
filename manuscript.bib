@@ -1,0 +1,836 @@
+%%% ====================================================================
+%%%  BibTeX-file{
+	%%%     author          = "Gerry Murray",
+	%%%     version         = "1.2",
+	%%%     date            = "2 April 2012",
+	%%%     filename        = "acmsmall-sample-bibfile.bib",
+	%%%     address         = "ACM, NY",
+	%%%     email           = "murray at hq.acm.org",
+	%%%     codetable       = "ISO/ASCII",
+	%%%     keywords        = "ACM Reference Format, bibliography, citation, 
+	%%%references",
+	%%%     supported       = "yes",
+	%%%     docstring       = "This BibTeX database file contains 'bibdata' entries
+	%%%                        that 'match' the examples provided in the 
+	%%%Specifications Document
+	%%%                        AND, also, 'legacy'-type bibs. It should assist 
+	%%%authors in 
+	%%%                        choosing the 'correct' at-bibtype and necessary 
+	%%%bib-fields
+	%%%                        so as to obtain the appropriate ACM Reference 
+	%%%Format output. 
+	%%%			   It also contains many 'Standard Abbreviations'. "
+	%%%  }
+%%% ====================================================================
+
+% Journals
+
+% First the Full Name is given, then the abbreviation used in the AMS Math
+% Reviews, with an indication if it could not be found there.
+% Note the 2nd overwrites the 1st, so swap them if you want the full name.
+
+%{AMS}
+@String{AMSTrans = "American Mathematical Society Translations" }
+@String{AMSTrans = "Amer. Math. Soc. Transl." }
+@String{BullAMS = "Bulletin of the American Mathematical Society" }
+@String{BullAMS = "Bull. Amer. Math. Soc." }
+@String{ProcAMS = "Proceedings of the American Mathematical Society" }
+@String{ProcAMS = "Proc. Amer. Math. Soc." }
+@String{TransAMS = "Transactions of the American Mathematical Society" }
+@String{TransAMS = "Trans. Amer. Math. Soc." }
+
+%ACM
+@String{CACM = "Communications of the {ACM}" }
+@String{CACM = "Commun. {ACM}" }
+@String{CompServ = "Comput. Surveys" }
+@String{JACM = "J. ACM" }
+@String{ACMMathSoft = "{ACM} Transactions on Mathematical Software" }
+@String{ACMMathSoft = "{ACM} Trans. Math. Software" }
+@String{SIGNUM = "{ACM} {SIGNUM} Newsletter" }
+@String{SIGNUM = "{ACM} {SIGNUM} Newslett." }
+
+@String{AmerSocio = "American Journal of Sociology" }
+@String{AmerStatAssoc = "Journal of the American Statistical Association" }
+@String{AmerStatAssoc = "J. Amer. Statist. Assoc." }
+@String{ApplMathComp = "Applied Mathematics and Computation" }
+@String{ApplMathComp = "Appl. Math. Comput." }
+@String{AmerMathMonthly = "American Mathematical Monthly" }
+@String{AmerMathMonthly = "Amer. Math. Monthly" }
+@String{BIT = "{BIT}" }
+@String{BritStatPsych = "British Journal of Mathematical and Statistical
+	Psychology" }
+@String{BritStatPsych = "Brit. J. Math. Statist. Psych." }
+@String{CanMathBull = "Canadian Mathematical Bulletin" }
+@String{CanMathBull = "Canad. Math. Bull." }
+@String{CompApplMath = "Journal of Computational and Applied Mathematics" }
+@String{CompApplMath = "J. Comput. Appl. Math." }
+@String{CompPhys = "Journal of Computational Physics" }
+@String{CompPhys = "J. Comput. Phys." }
+@String{CompStruct = "Computers and Structures" }
+@String{CompStruct = "Comput. \& Structures" }
+@String{CompJour = "The Computer Journal" }
+@String{CompJour = "Comput. J." }
+@String{CompSysSci = "Journal of Computer and System Sciences" }
+@String{CompSysSci = "J. Comput. System Sci." }
+@String{Computing = "Computing" }
+@String{ContempMath = "Contemporary Mathematics" }
+@String{ContempMath = "Contemp. Math." }
+@String{Crelle = "Crelle's Journal" }
+@String{GiornaleMath = "Giornale di Mathematiche" }
+@String{GiornaleMath = "Giorn. Mat." } % didn't find in AMS MR., ibid.
+
+%IEEE
+@String{Computer = "{IEEE} Computer" }
+@String{IEEETransComp = "{IEEE} Transactions on Computers" }
+@String{IEEETransComp = "{IEEE} Trans. Comput." }
+@String{IEEETransAC = "{IEEE} Transactions on Automatic Control" }
+@String{IEEETransAC = "{IEEE} Trans. Automat. Control" }
+@String{IEEESpec = "{IEEE} Spectrum" } % didn't find in AMS MR
+@String{ProcIEEE = "Proceedings of the {IEEE}" }
+@String{ProcIEEE = "Proc. {IEEE}" } % didn't find in AMS MR
+@String{IEEETransAeroElec = "{IEEE} Transactions on Aerospace and Electronic
+	Systems" }
+@String{IEEETransAeroElec = "{IEEE} Trans. Aerospace Electron. Systems" }
+
+@String{IMANumerAna = "{IMA} Journal of Numerical Analysis" }
+@String{IMANumerAna = "{IMA} J. Numer. Anal." }
+@String{InfProcLet = "Information Processing Letters" }
+@String{InfProcLet = "Inform. Process. Lett." }
+@String{InstMathApp = "Journal of the Institute of Mathematics and
+	its Applications" }
+@String{InstMathApp = "J. Inst. Math. Appl." }
+@String{IntControl = "International Journal of Control" }
+@String{IntControl = "Internat. J. Control" }
+@String{IntNumerEng = "International Journal for Numerical Methods in
+	Engineering" }
+@String{IntNumerEng = "Internat. J. Numer. Methods Engrg." }
+@String{IntSuper = "International Journal of Supercomputing Applications" }
+@String{IntSuper = "Internat. J. Supercomputing Applic." } % didn't find
+%% in AMS MR
+@String{Kibernetika = "Kibernetika" }
+@String{JResNatBurStand = "Journal of Research of the National Bureau
+	of Standards" }
+@String{JResNatBurStand = "J. Res. Nat. Bur. Standards" }
+@String{LinAlgApp = "Linear Algebra and its Applications" }
+@String{LinAlgApp = "Linear Algebra Appl." }
+@String{MathAnaAppl = "Journal of Mathematical Analysis and Applications" }
+@String{MathAnaAppl = "J. Math. Anal. Appl." }
+@String{MathAnnalen = "Mathematische Annalen" }
+@String{MathAnnalen = "Math. Ann." }
+@String{MathPhys = "Journal of Mathematical Physics" }
+@String{MathPhys = "J. Math. Phys." }
+@String{MathComp = "Mathematics of Computation" }
+@String{MathComp = "Math. Comp." }
+@String{MathScand = "Mathematica Scandinavica" }
+@String{MathScand = "Math. Scand." }
+@String{TablesAidsComp = "Mathematical Tables and Other Aids to Computation" }
+@String{TablesAidsComp = "Math. Tables Aids Comput." }
+@String{NumerMath = "Numerische Mathematik" }
+@String{NumerMath = "Numer. Math." }
+@String{PacificMath = "Pacific Journal of Mathematics" }
+@String{PacificMath = "Pacific J. Math." }
+@String{ParDistComp = "Journal of Parallel and Distributed Computing" }
+@String{ParDistComp = "J. Parallel and Distrib. Comput." } % didn't find
+%% in AMS MR
+@String{ParComputing = "Parallel Computing" }
+@String{ParComputing = "Parallel Comput." }
+@String{PhilMag = "Philosophical Magazine" }
+@String{PhilMag = "Philos. Mag." }
+@String{ProcNAS = "Proceedings of the National Academy of Sciences
+	of the USA" }
+@String{ProcNAS = "Proc. Nat. Acad. Sci. U. S. A." }
+@String{Psychometrika = "Psychometrika" }
+@String{QuartMath = "Quarterly Journal of Mathematics, Oxford, Series (2)" }
+@String{QuartMath = "Quart. J. Math. Oxford Ser. (2)" }
+@String{QuartApplMath = "Quarterly of Applied Mathematics" }
+@String{QuartApplMath = "Quart. Appl. Math." }
+@String{RevueInstStat = "Review of the International Statisical Institute" }
+@String{RevueInstStat = "Rev. Inst. Internat. Statist." }
+
+%SIAM
+@String{JSIAM = "Journal of the Society for Industrial and Applied
+	Mathematics" }
+@String{JSIAM = "J. Soc. Indust. Appl. Math." }
+@String{JSIAMB = "Journal of the Society for Industrial and Applied
+	Mathematics, Series B, Numerical Analysis" }
+@String{JSIAMB = "J. Soc. Indust. Appl. Math. Ser. B Numer. Anal." }
+@String{SIAMAlgMeth = "{SIAM} Journal on Algebraic and Discrete Methods" }
+@String{SIAMAlgMeth = "{SIAM} J. Algebraic Discrete Methods" }
+@String{SIAMAppMath = "{SIAM} Journal on Applied Mathematics" }
+@String{SIAMAppMath = "{SIAM} J. Appl. Math." }
+@String{SIAMComp = "{SIAM} Journal on Computing" }
+@String{SIAMComp = "{SIAM} J. Comput." }
+@String{SIAMMatrix = "{SIAM} Journal on Matrix Analysis and Applications" }
+@String{SIAMMatrix = "{SIAM} J. Matrix Anal. Appl." }
+@String{SIAMNumAnal = "{SIAM} Journal on Numerical Analysis" }
+@String{SIAMNumAnal = "{SIAM} J. Numer. Anal." }
+@String{SIAMReview = "{SIAM} Review" }
+@String{SIAMReview = "{SIAM} Rev." }
+@String{SIAMSciStat = "{SIAM} Journal on Scientific and Statistical
+	Computing" }
+@String{SIAMSciStat = "{SIAM} J. Sci. Statist. Comput." }
+
+@String{SoftPracExp = "Software Practice and Experience" }
+@String{SoftPracExp = "Software Prac. Experience" } % didn't find in AMS MR
+@String{StatScience = "Statistical Science" }
+@String{StatScience = "Statist. Sci." }
+@String{Techno = "Technometrics" }
+@String{USSRCompMathPhys = "{USSR} Computational Mathematics and Mathematical
+	Physics" }
+@String{USSRCompMathPhys = "{U. S. S. R.} Comput. Math. and Math. Phys." }
+@String{VLSICompSys = "Journal of {VLSI} and Computer Systems" }
+@String{VLSICompSys = "J. {VLSI} Comput. Syst." }
+@String{ZAngewMathMech = "Zeitschrift fur Angewandte Mathematik und
+	Mechanik" }
+@String{ZAngewMathMech = "Z. Angew. Math. Mech." }
+@String{ZAngewMathPhys = "Zeitschrift fur Angewandte Mathematik und Physik" }
+@String{ZAngewMathPhys = "Z. Angew. Math. Phys." }
+
+% Publishers % ================================================= |
+
+@String{Academic = "Academic Press" }
+@String{ACMPress = "{ACM} Press" }
+@String{AdamHilger = "Adam Hilger" }
+@String{AddisonWesley = "Addison-Wesley" }
+@String{AllynBacon = "Allyn and Bacon" }
+@String{AMS = "American Mathematical Society" }
+@String{Birkhauser = "Birkha{\"u}ser" }
+@String{CambridgePress = "Cambridge University Press" }
+@String{Chelsea = "Chelsea" }
+@String{ClaredonPress = "Claredon Press" }
+@String{DoverPub = "Dover Publications" }
+@String{Eyolles = "Eyolles" }
+@String{HoltRinehartWinston = "Holt, Rinehart and Winston" }
+@String{Interscience = "Interscience" }
+@String{JohnsHopkinsPress = "The Johns Hopkins University Press" }
+@String{JohnWileySons = "John Wiley and Sons" }
+@String{Macmillan = "Macmillan" }
+@String{MathWorks = "The Math Works Inc." }
+@String{McGrawHill = "McGraw-Hill" }
+@String{NatBurStd = "National Bureau of Standards" }
+@String{NorthHolland = "North-Holland" }
+@String{OxfordPress = "Oxford University Press" }  %address Oxford or London?
+@String{PergamonPress = "Pergamon Press" }
+@String{PlenumPress = "Plenum Press" }
+@String{PrenticeHall = "Prentice-Hall" }
+@String{SIAMPub = "{SIAM} Publications" }
+@String{Springer = "Springer-Verlag" }
+@String{TexasPress = "University of Texas Press" }
+@String{VanNostrand = "Van Nostrand" }
+@String{WHFreeman = "W. H. Freeman and Co." }
+
+%Entries
+
+
+@inproceedings{bissyande2013got,
+	title={Got issues? who cares about it? a large scale investigation of issue 
+	trackers from github},
+	author={Bissyand{\'e}, Tegawend{\'e} F and Lo, David and Jiang, Lingxiao and 
+	R{\'e}veillere, Laurent and Klein, Jacques and Le Traon, Yves},
+	booktitle={Software Reliability Engineering (ISSRE), 2013 IEEE 24th 
+	International Symposium on},
+	pages={188--197},
+	year={2013},
+	organization={IEEE}
+}
+
+@inproceedings{kalliamvakou2014promises,
+	title={The promises and perils of mining github},
+	author={Kalliamvakou, Eirini and Gousios, Georgios and Blincoe, Kelly and 
+	Singer, Leif and German, Daniel M and Damian, Daniela},
+	booktitle={Proceedings of the 11th working conference on mining software 
+	repositories},
+	pages={92--101},
+	year={2014},
+	organization={ACM}
+}
+
+@article{rees2017better,
+	title={Better Predictors for Issue Lifetime},
+	author={Rees-Jones, Mitch and Martin, Matthew and Menzies, Tim},
+	journal={arXiv preprint arXiv:1702.07735},
+	year={2017}
+}
+
+@inproceedings{kikas2016using,
+	title={Using dynamic and contextual features to predict issue lifetime in 
+	github projects},
+	author={Kikas, Riivo and Dumas, Marlon and Pfahl, Dietmar},
+	booktitle={Mining Software Repositories (MSR), 2016 IEEE/ACM 13th Working 
+	Conference on},
+	pages={291--302},
+	year={2016},
+	organization={IEEE}
+}
+
+@inproceedings{ayari2007threats,
+	title={Threats on building models from cvs and bugzilla repositories: the 
+	mozilla case study},
+	author={Ayari, Kamel and Meshkinfam, Peyman and Antoniol, Giuliano and Di 
+	Penta, Massimiliano},
+	booktitle={Proceedings of the 2007 conference of the center for advanced 
+	studies on Collaborative research},
+	pages={215--228},
+	year={2007},
+	organization={IBM Corp.}
+}
+@inproceedings{kenmei2008trend,
+	title={Trend analysis and issue prediction in large-scale open source systems},
+	author={Kenmei, Benedicte and Antoniol, Giuliano and Di Penta, Massimiliano},
+	booktitle={Software Maintenance and Reengineering, 2008. CSMR 2008. 12th 
+	European Conference on},
+	pages={73--82},
+	year={2008},
+	organization={IEEE}
+}
+@article{ho1998use,
+	title={The use of ARIMA models for reliability forecasting and analysis},
+	author={Ho, SL and Xie, M},
+	journal={Computers \& industrial engineering},
+	volume={35},
+	number={1-2},
+	pages={213--216},
+	year={1998},
+	publisher={Elsevier}
+}
+@article{pai2006software,
+	title={Software reliability forecasting by support vector machines with 
+	simulated annealing algorithms},
+	author={Pai, Ping-Feng and Hong, Wei-Chiang},
+	journal={Journal of Systems and Software},
+	volume={79},
+	number={6},
+	pages={747--755},
+	year={2006},
+	publisher={Elsevier}
+}
+@article{amin2013approach,
+	title={An approach to software reliability prediction based on time series 
+	modeling},
+	author={Amin, Ayman and Grunske, Lars and Colman, Alan},
+	journal={Journal of Systems and Software},
+	volume={86},
+	number={7},
+	pages={1923--1932},
+	year={2013},
+	publisher={Elsevier}
+}
+@article{burtschy1997improving,
+	title={Improving software reliability forecasting},
+	author={Burtschy, Bernard and Albeanu, Grigore and Boros, Dragos N and 
+	Popentiu, Florin and Nicola, Victor},
+	journal={Microelectronics Reliability},
+	volume={37},
+	number={6},
+	pages={901--907},
+	year={1997},
+	publisher={Elsevier}
+}
+@book{box2015time,
+	title={Time series analysis: forecasting and control},
+	author={Box, George EP and Jenkins, Gwilym M and Reinsel, Gregory C and Ljung, 
+	Greta M},
+	year={2015},
+	publisher={John Wiley \& Sons}
+}
+
+@inproceedings{godfrey2001growth,
+  title={Growth, evolution, and structural change in open source software},
+  author={Godfrey, Michael and Tu, Qiang},
+  booktitle={Proceedings of the 4th international workshop on principles of software evolution},
+  pages={103--106},
+  year={2001},
+  organization={ACM}
+}
+
+@book{lehman1985program,
+  title={Program evolution: processes of software change},
+  author={Lehman, Manny M and Belady, Laszlo A},
+  year={1985},
+  publisher={Academic Press Professional, Inc.}
+}
+
+@inproceedings{fuentetaja2002software,
+  title={Software evolution from a time-series perspective},
+  author={Fuentetaja, Eduardo and Bagert, Donald J},
+  booktitle={Software Maintenance, 2002. Proceedings. International Conference on},
+  pages={226--229},
+  year={2002},
+  organization={IEEE}
+}
+@article{turski1996reference,
+  title={Reference model for smooth growth of software systems},
+  author={Turski, Wladyslaw M},
+  journal={IEEE Transactions on Software Engineering},
+  volume={22},
+  number={8},
+  pages={599},
+  year={1996},
+  publisher={IEEE Computer Society}
+}
+@misc{wu2006seeking,
+  title={Seeking empirical evidence for self-organized criticality in open source software evolution},
+  author={Wu, Jingwei and Holt, Richard},
+  year={2006},
+  publisher={Technical Report Technical Report CS-2006-14, University of Waterloo, Canada}
+}
+@article{hurst1951long,
+  title={Long-term storage capacity of reservoirs},
+  author={Hurst, Harold Edwin},
+  journal={Trans. Amer. Soc. Civil Eng.},
+  volume={116},
+  pages={770--808},
+  year={1951}
+}
+@article{willmott2005advantages,
+  title={Advantages of the mean absolute error (MAE) over the root mean square error (RMSE) in assessing average model performance},
+  author={Willmott, Cort J and Matsuura, Kenji},
+  journal={Climate research},
+  volume={30},
+  number={1},
+  pages={79--82},
+  year={2005},
+  publisher={JSTOR}
+}
+@article{willmott2006use,
+  title={On the use of dimensioned measures of error to evaluate the performance of spatial interpolators},
+  author={Willmott, Cort J and Matsuura, Kenji},
+  journal={International Journal of Geographical Information Science},
+  volume={20},
+  number={1},
+  pages={89--102},
+  year={2006},
+  publisher={Taylor \& Francis}
+}
+@article{dickey1979distribution,
+	title={Distribution of the estimators for autoregressive time series with a 
+	unit root},
+	author={Dickey, David A and Fuller, Wayne A},
+	journal={Journal of the American statistical association},
+	volume={74},
+	number={366a},
+	pages={427--431},
+	year={1979},
+	publisher={Taylor \& Francis}
+}
+@book{seber2012linear,
+	title={Linear regression analysis},
+	author={Seber, George AF and Lee, Alan J},
+	volume={936},
+	year={2012},
+	publisher={John Wiley \& Sons}
+}
+@article{abrahamsson2017agile,
+	title={Agile software development methods: Review and analysis},
+	author={Abrahamsson, Pekka and Salo, Outi and Ronkainen, Jussi and Warsta, 
+	Juhani},
+	journal={arXiv preprint arXiv:1709.08439},
+	year={2017}
+}
+@article{dybaa2008empirical,
+	title={Empirical studies of agile software development: A systematic review},
+	author={Dyb{\aa}, Tore and Dings{\o}yr, Torgeir},
+	journal={Information and software technology},
+	volume={50},
+	number={9},
+	pages={833--859},
+	year={2008},
+	publisher={Elsevier}
+}
+@article{misra2009identifying,
+	title={Identifying some important success factors in adopting agile software 
+	development practices},
+	author={Misra, Subhas Chandra and Kumar, Vinod and Kumar, Uma},
+	journal={Journal of Systems and Software},
+	volume={82},
+	number={11},
+	pages={1869--1890},
+	year={2009},
+	publisher={Elsevier}
+}
+@inproceedings{begel2007usage,
+	title={Usage and perceptions of agile software development in an industrial 
+	context: An exploratory study},
+	author={Begel, Andrew and Nagappan, Nachiappan},
+	booktitle={Empirical Software Engineering and Measurement, 2007. ESEM 2007. 
+	First International Symposium on},
+	pages={255--264},
+	year={2007},
+	organization={IEEE}
+}
+@article{lohr_2007, 
+	title={Slow Down, Brave Multitasker, and Don’t Read This in Traffic}, 
+	url={http://www.nytimes.com/2007/03/25/business/25multi.html?_r=4&pagewanted=all&oref=slogin},
+	publisher={The New York Times}, 
+	author={LOHR, STEVE}, 
+	year={2007}, 
+	month={Mar}}
+@article{tugend_2008, title={Multitasking Can Make You Lose ... Um ... Focus}, 
+url={https://nyti.ms/2jD6gzj}, publisher={The New York Times}, author={Tugend, 
+Alina }, year={2008}, month={Oct}}
+
+@article{weinberg1992quality,
+	title={Quality software management (Vol. 1): systems thinking},
+	author={Weinberg, Gerald M},
+	year={1992},
+	publisher={Dorset House Publishing Co., Inc.}
+}
+@misc{jel72,
+	title={Software reliability research, Statistical Computer Performance 
+	Evaluation, W. Freiberger (ed.), 465--484},
+	author={Jelinski, Z and Moranda, PB},
+	year={1972},
+	publisher={Academic Press, New York}
+}
+@inproceedings{Lyu07,
+	title={Software reliability engineering: A roadmap},
+	author={Lyu, Michael R},
+	booktitle={2007 Future of Software Engineering},
+	pages={153--170},
+	year={2007},
+	organization={IEEE Computer Society}
+}
+@article{goel85,
+	title={Software reliability models: Assumptions, limitations, and 
+	applicability},
+	author={Goel, Amrit L.},
+	journal={IEEE Transactions on software engineering},
+	number={12},
+	pages={1411--1423},
+	year={1985},
+	publisher={IEEE}
+}
+@article{goel79,
+	title={Time-dependent error-detection rate model for software reliability and 
+	other performance measures},
+	author={Goel, Amrit L and Okumoto, Kazu},
+	journal={IEEE transactions on Reliability},
+	volume={28},
+	number={3},
+	pages={206--211},
+	year={1979},
+	publisher={IEEE}
+}
+@article{lyu96,
+	title={Handbook of software reliability engineering},
+	author={Lyu, Michael R and others},
+	year={1996},
+	publisher={IEEE computer society press CA}
+}
+@inproceedings{wood97,
+	title={Software reliability growth models: assumptions vs. reality},
+	author={Wood, Alan},
+	booktitle={Software Reliability Engineering, 1997. Proceedings., The Eighth 
+	International Symposium on},
+	pages={136--141},
+	year={1997},
+	organization={IEEE}
+}
+@inproceedings{Zeitler91,
+	title={Realistic assumptions for software reliability models},
+	author={Zeitler, David},
+	booktitle={Software Reliability Engineering, 1991. Proceedings., 1991 
+	International Symposium on},
+	pages={67--74},
+	year={1991},
+	organization={IEEE}
+}
+@article{Robinson87,
+	title={A new nonparametric growth model},
+	author={Robinson, David G and Dietrich, Duane},
+	journal={IEEE Transactions on Reliability},
+	volume={36},
+	number={4},
+	pages={411--418},
+	year={1987},
+	publisher={IEEE}
+}
+@article{Barghout98,
+	title={A non-parametric order statistics software reliability model},
+	author={Barghout, May and Littlewood, Bev and Abdel-Ghaly, Abdalla},
+	journal={Software Testing Verification and Reliability},
+	volume={8},
+	number={3},
+	pages={113--132},
+	year={1998},
+	publisher={Chichester, Sussex, England: J. Wiley, c1992-}
+}
+@inproceedings{Neil96,
+	title={Predicting software quality using Bayesian belief networks},
+	author={Neil, Martin and Fenton, Norman},
+	booktitle={Proceedings of the 21st Annual Software Engineering Workshop},
+	pages={217--230},
+	year={1996},
+	organization={NASA/Goddard Space Flight Centre}
+}
+@article{Bai05,
+	title={Software failure prediction based on a Markov Bayesian network model},
+	author={Bai, CG and Hu, QP and Xie, Min and Ng, Szu Hui},
+	journal={Journal of Systems and Software},
+	volume={74},
+	number={3},
+	pages={275--282},
+	year={2005},
+	publisher={Elsevier}
+}
+@article{Fenton08,
+	title={Using Bayesian networks to predict software defects and reliability},
+	author={Fenton, N and Neil, Martin and Marquez, D},
+	journal={Proceedings of the Institution of Mechanical Engineers, Part O: 
+	Journal of Risk and Reliability},
+	volume={222},
+	number={4},
+	pages={701--712},
+	year={2008},
+	publisher={SAGE Publications Sage UK: London, England}
+}
+@article{Wiper12,
+	title={Bayesian software reliability prediction using software metrics 
+	information},
+	author={Wiper, MP and Palacios, AP and Mar{\'\i}n, JM},
+	journal={Quality Technology \& Quantitative Management},
+	volume={9},
+	number={1},
+	pages={35--44},
+	year={2012},
+	publisher={Taylor \& Francis}
+}
+@article{karunanithi92,
+	title={Using neural networks in reliability prediction},
+	author={Karunanithi, Nachimuthu and Whitley, Darrell and Malaiya, Yashwant K.},
+	journal={IEEE Software},
+	volume={9},
+	number={4},
+	pages={53--59},
+	year={1992},
+	publisher={IEEE}
+}
+@article{Pai06,
+	title={Software reliability forecasting by support vector machines with 
+	simulated annealing algorithms},
+	author={Pai, Ping-Feng and Hong, Wei-Chiang},
+	journal={Journal of Systems and Software},
+	volume={79},
+	number={6},
+	pages={747--755},
+	year={2006},
+	publisher={Elsevier}
+}
+@article{Kiran07,
+	title={Software reliability prediction by soft computing techniques},
+	author={Kiran, N Raj and Ravi, Vadlamani},
+	journal={Journal of Systems and Software},
+	volume={81},
+	number={4},
+	pages={576--583},
+	year={2008},
+	publisher={Elsevier}
+}
+@inproceedings{Zaidi08,
+	title={Modeling inter-failure time series using neural networks},
+	author={Zaidi, S Jamal H and Danial, Syed Nasir and Usmani, Bilal A},
+	booktitle={Multitopic Conference, 2008. INMIC 2008. IEEE International},
+	pages={409--411},
+	year={2008},
+	organization={IEEE}
+}
+@inproceedings{Lo09,
+	title={The implementation of artificial neural networks applying to software 
+	reliability modeling},
+	author={Lo, Jung-Hua},
+	booktitle={Control and Decision Conference, 2009. CCDC'09. Chinese},
+	pages={4349--4354},
+	year={2009},
+	organization={IEEE}
+}
+@article{Yang10,
+	title={A generic data-driven software reliability model with model mining 
+	technique},
+	author={Yang, Bo and Li, Xiang and Xie, Min and Tan, Feng},
+	journal={Reliability Engineering \& System Safety},
+	volume={95},
+	number={6},
+	pages={671--678},
+	year={2010},
+	publisher={Elsevier}
+}
+@article{Moura11,
+	title={Failure and reliability prediction by support vector machines 
+	regression of time series data},
+	author={das Chagas Moura, M{\'a}rcio and Zio, Enrico and Lins, Isis Didier and 
+	Droguett, Enrique},
+	journal={Reliability Engineering \& System Safety},
+	volume={96},
+	number={11},
+	pages={1527--1534},
+	year={2011},
+	publisher={Elsevier}
+}
+@article{Singpur85,
+	title={Assessing (software) reliability growth using a random coefficient 
+	autoregressive process and its ramifications},
+	author={Singpurwalla, Nozer D. and Soyer, Refik},
+	journal={IEEE Transactions on Software Engineering},
+	number={12},
+	pages={1456--1464},
+	year={1985},
+	publisher={IEEE}
+}
+@article{Chatterjee97,
+	title={Prediction of software reliability using an auto regressive process},
+	author={Chatterjee, S and Misra, RB and Alam, SS},
+	journal={International journal of systems science},
+	volume={28},
+	number={2},
+	pages={211--216},
+	year={1997},
+	publisher={Taylor \& Francis}
+}
+@article{Xie99,
+	title={Analysis of repairable system failure data using time series models},
+	author={Xie, M and Ho, SL},
+	journal={Journal of Quality in Maintenance Engineering},
+	volume={5},
+	number={1},
+	pages={50--61},
+	year={1999},
+	publisher={MCB UP Ltd}
+}
+@inproceedings{Junhong05,
+	title={An autoregressive time series software reliability growth model with 
+	independent increment},
+	author={Junhong, Guo and Hongwei, Liu and Xiaozong, Yang},
+	booktitle={Proceedings of the 7th WSEAS International Conference on 
+	Mathematical Methods and Computational Techniques In Electrical Engineering},
+	pages={362--366},
+	year={2005},
+	organization={World Scientific and Engineering Academy and Society (WSEAS)}
+}
+@article{kemerer1999empirical,
+	title={An empirical approach to studying software evolution},
+	author={Kemerer, Chris F. and Slaughter, Sandra},
+	journal={IEEE Transactions on Software Engineering},
+	volume={25},
+	number={4},
+	pages={493--509},
+	year={1999},
+	publisher={IEEE}
+}
+@inproceedings{herraiz2007forecasting,
+	title={Forecasting the number of changes in Eclipse using time series 
+	analysis},
+	author={Herraiz, Israel and Gonzalez-Barahona, Jesus M and Robles, Gregorio},
+	booktitle={Mining Software Repositories, 2007. ICSE Workshops MSR'07. Fourth 
+	International Workshop on},
+	pages={32--32},
+	year={2007},
+	organization={IEEE}
+}
+@inproceedings{chong1988analyzing,
+	title={On analyzing maintenance process data at the global and the detailed 
+	levels: A case study},
+	author={Chong Hok Yuen, CKS},
+	booktitle={Proceedings of the IEEE Conference on Software Maintenance},
+	pages={248--255},
+	year={1988}
+}
+
+%% Self
+
+@article{menzies2007data,
+  title={Data mining static code attributes to learn defect predictors},
+  author={Menzies, Tim and Greenwald, Jeremy and Frank, Art},
+  journal={IEEE transactions on software engineering},
+  volume={33},
+  number={1},
+  pages={2--13},
+  year={2007},
+  publisher={IEEE}
+}
+@article{turhan2009relative,
+  title={On the relative value of cross-company and within-company data for defect prediction},
+  author={Turhan, Burak and Menzies, Tim and Bener, Ay{\c{s}}e B and Di Stefano, Justin},
+  journal={Empirical Software Engineering},
+  volume={14},
+  number={5},
+  pages={540--578},
+  year={2009},
+  publisher={Springer}
+}
+@article{menzies2010defect,
+  title={Defect prediction from static code features: current results, limitations, new approaches},
+  author={Menzies, Tim and Milton, Zach and Turhan, Burak and Cukic, Bojan and Jiang, Yue and Bener, Ay{\c{s}}e},
+  journal={Automated Software Engineering},
+  volume={17},
+  number={4},
+  pages={375--407},
+  year={2010},
+  publisher={Springer}
+}
+@ARTICLE{7959597, 
+author={J. Nam and W. Fu and S. Kim and T. Menzies and L. Tan}, 
+journal={IEEE Transactions on Software Engineering}, 
+title={Heterogeneous Defect Prediction}, 
+year={2017}, 
+volume={PP}, 
+number={99}, 
+pages={1-1}, 
+keywords={Data models;NASA;Predictive models;Software;Software metrics;Training;defect prediction;heterogeneous metrics;quality assurance;transfer learning}, 
+doi={10.1109/TSE.2017.2720603}, 
+ISSN={0098-5589}, 
+month={},}
+
+@article{krishna2017less,
+  title={Less is more: Minimizing code reorganization using XTREE},
+  author={Krishna, Rahul and Menzies, Tim and Layman, Lucas},
+  journal={Information and Software Technology},
+  volume={88},
+  pages={53--66},
+  year={2017},
+  publisher={Elsevier}
+}
+@inproceedings{krishna2016too,
+  title={Too much automation? The bellwether effect and its implications for transfer learning},
+  author={Krishna, Rahul and Menzies, Tim and Fu, Wei},
+  booktitle={Proceedings of the 31st IEEE/ACM International Conference on Automated Software Engineering},
+  pages={122--131},
+  year={2016},
+  organization={ACM}
+}
+
+@inproceedings{bissyande2013got,
+	title={Got issues? who cares about it? a large scale investigation of issue 
+	trackers from github},
+	author={Bissyand{\'e}, Tegawend{\'e} F and Lo, David and Jiang, Lingxiao and 
+	R{\'e}veillere, Laurent and Klein, Jacques and Le Traon, Yves},
+	booktitle={Software Reliability Engineering (ISSRE), 2013 IEEE 24th 
+	International Symposium on},
+	pages={188--197},
+	year={2013},
+	organization={IEEE}
+}
+
+@misc{gh:showcase, 
+title={Build software better, together}, 
+author={Github},
+url="https://github.com/showcases"
+}
+
+@inproceedings{bird2009promises,
+  title={Mining email social networks},
+  author={Bird, Christian and Gourley, Alex and Devanbu, Prem and Gertz, Michael and Swaminathan, Anand},
+  booktitle={Proceedings of the 2006 international workshop on Mining software repositories},
+  pages={137--143},
+  year={2006},
+  organization={ACM}
+}
+@article{MunaiahCuration2017,
+  title={Curating GitHub for engineered software projects},
+  author={Munaiah, Nuthan and Kroh, Steven and Cabrey, Craig and Nagappan, Meiyappan},
+  journal={Empirical Software Engineering},
+  volume={22},
+  number={6},
+  pages={3219--3253},
+  year={2017},
+  publisher={Springer}
+}
