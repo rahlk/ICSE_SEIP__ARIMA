@@ -92,10 +92,10 @@ symmetry/.style={dashed,thin},
 
 \begin{document}
 
-\title{What is the Connection Between Issues, Bugs, and Enhancements?
-(Lessons Learned
-from
-800+ Software Projects)}
+\title{What is the Connection Between Issues, Bugs, and Enhancements?}
+\subtitle{Lessons Learned
+    from
+    800+ Software Projects}
 \author{
 Rahul Krishna, Amritanshu Agrawal, Akond Rahman, 
 Alexander Sobran*, and Tim Menzies}
@@ -695,11 +695,10 @@ plotted for all the projects as shown in Figures \ref{fig:rq1} and \ref{fig:rq3}
 		these attributes, a time series model such as ARIMA, which is equipped to 
 		make accurate forecasts, should lead to low errors when we use past data to 
 		forecast for the future. For this purpose, we ask if we may construct a 
-		time series model using past data from the same attributes (called 
-		$\mathit{LABELED}$). That is, we attempt 
-		to: (a) forecast for future the number of bugs using past trends in bug 
-		reports, (b) forecast for future the number of issue reports using past 
-		trends in issue reports, and (c) forecast for future the number of 
+		time series model using past data of issues, bugs, and enhancements. That is, 
+        we attempt to: (a)~forecast for future the number of bugs using past trends in bug 
+		reports, (b)~forecast for future the number of issue reports using past 
+		trends in issue reports, and (c)~forecast for future the number of 
 		enhancements using past trends in enhancements.
 			
 		For experimentation, in each project we use a rolling window 
