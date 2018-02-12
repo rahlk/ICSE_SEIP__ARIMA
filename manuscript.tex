@@ -502,7 +502,7 @@ forecasting approach and statistical measures in \tion{approach} and
 \label{sect:datasets}
 
 To perform our experiments we use open-source projects from GitHub, and 
-proprietary projects obtained from our industrial partners at IBM Raleigh. These totaled to 1,646 different projects with 1,108 opensource projects and 538 proprietary projects. Our data selection strategy is as follows:
+proprietary projects obtained from our industrial partners at IBM Raleigh. These totaled to 1,646 different projects with 1,108 opensource projects and 538 proprietary projects. After filtering (see \tion{filter}), these were reduced to 832 project. Our data selection strategy is as follows:
 
 \be
 \item In case of open source projects we select public GitHub projects that are included as a `GitHub showcase  project'. Of the publicly available projects hosted on GitHub, a selected set of projects are marked as `showcases', to demonstrate how a project can be 
@@ -516,15 +516,14 @@ developed in certain domain such as game development, music, etc.~\cite{gh:showc
 Note that all the projects are hosted on GitHub. They have different start dates. We show the start dates of the proprietary and open source projects in \fig{start_date}. It is worth noting that a majority of these projects have a history of at least one year.
 
 \subsubsection{Extracting Relevant Projects}
-
+\label{sect:filter}
 It is important to note that projects hosted on GitHub gives researchers a tremendous opportunity to extract necessary project information such as issues, bugs, and 
 enhancements~\cite{kalliamvakou2014promises}~\cite{bird2009promises}~\cite{MunaiahCuration2017}. Unfortunately, it is possible that many of these projects can contain very short development activity, can be used for personal use, or not be related to software development at all~\cite{kalliamvakou2014promises}~\cite{bird2009promises}. These projects may bias our findings. Hence, we implement a set of rules to identify and discard these projects. We call these set of rules ``filters'' and they are designed such that only the projects that contain sufficient software development data for analysis pass this filter. 
 
 As the first step of filtering, we identify projects that contain sufficient software 
 development information using the following criteria. These criteria address 
 the limitations of mining GitHub projects as highlighted by prior 
-researchers~\cite{kalliamvakou2014promises}~\cite{bird2009promises}. The rest 
-of the rules are listed below:
+researchers~\cite{kalliamvakou2014promises}~\cite{bird2009promises}. We summarized these into the rules listed below:
 
 \input{tex/sample_datasets.tex}
 \input{tex/start_date.tex}
