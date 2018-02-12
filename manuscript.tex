@@ -1,5 +1,5 @@
 \documentclass[sigconf, preprint]{acmart}
-% \documentclass[sigconf, draft,review]{acmart}
+%\documentclass[sigconf, draft,review]{acmart}
 \usepackage{booktabs} % For formal tables
 \usepackage{pbox}
 \usepackage{csvsimple}
@@ -119,12 +119,14 @@ changes, then managers could  better adjust the
 staff allocated to those projects.
 
 This paper builds such a predictor using data from  832  open source and 
-proprietary applications. 
-Using a time series analysis of the   last 4 months
+proprietary applications. Using a time series analysis of the   last 4 months
 of {\em issues}, we can forecast how many {\em bug reports} and \textit{enhancement requests} will be generated  next month. 
 
-The forecasts made in this way only require a frequency count of this issue reports 
-(and do \underline{not} require an historical record of bugs found in the project). That is, this kind of predictive model is very easy to deploy within a project. We hence strongly recommend this method for forecasting future issues, enhancements, and bugs in a project. 
+The forecasts made in this way only require a frequency count of these issue 
+reports  (and do \underline{not} require an historical record of bugs found in 
+the project). That is, this kind of predictive model is very easy to deploy 
+within a project. We hence strongly recommend this method for forecasting 
+future issues, enhancements, and bugs in a project. 
 \end{abstract}
 
 
@@ -152,69 +154,92 @@ development</concept_desc>
 %%%%%%%%%%%%%%%%%%%%%%%%% INTRODUCTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\pagestyle{plain}
+%\pagestyle{plain}
 \section{Introduction}
 \label{sect:intro}
 
 In the early days of software engineering, when doing any single project
-was a Herculean task,   developers were often assigned to one project for months at  a time.
+was a Herculean task, developers were often assigned to one project for months 
+at  a time.
 In the age of agile~\cite{abrahamsson2017agile, 
 dybaa2008empirical, misra2009identifying, begel2007usage}, that has changed. How should management practices change to better accommodate agile developments?
 
-One principle of 
-agile  is to use multitasking to get work done.
-Agile teams juggle multiple tasks so professionals are often    assigned to multiple projects, especially in service organizations that monitor and maintain a large suite of software for a large user base. 
+One principle of agile  is to use multitasking to get work done.
+Agile teams juggle multiple tasks so professionals are often assigned to 
+multiple projects, especially in service organizations that monitor and 
+maintain a large suite of software for a large user base. 
 
+When project conditions change, it would be very useful if managers can  
+adjust the staff allocated to those projects. Ideally, managers   overseeing 
+multiple projects would like to tell whether more/less developers will be 
+required in the upcoming month in order to make informed choices about changes 
+to staffing allocations.
 
-When project conditions
-changes, it would be very useful 
-if managers can  adjust the
-staff allocated to those projects.
-Ideally, managers   overseeing multiple projects
-would like to tell whether more/less developers will be required in the upcoming month in order to make informed choices about changes to staffing allocations.
+This  ideal scenario might be achievable, given access to enough software 
+projects. For example, here we apply a  time series analysis to   832 
+proprietary and open source projects from GitHub repositories.  Data was 
+gathered by sampling projects every week for an average period of two years. 
+The mined data contained the following attributes: issue reports, bugs reports, 
+and enhancement requests for each week. Temporal trends in this data were
+modeled using \textit{\underline{A}uto\underline{R}egressive 
+\underline{I}ntegrated \underline{M}oving \underline{A}verage} 
+(ARIMA)~\cite{box2015time} (this is a standard method that has shown to  
+outperform other models such as linear regression or random 
+walk~\cite{kenmei2008trend, ho1998use, pai2006software, amin2013approach, 
+burtschy1997improving})~\footnote{Note that that this paper focuses on 
+``near-term  
+forecasts''. Long term forecasts are beyond the scope of this paper. We leave 
+that for future work.}.
 
-This  ideal scenario might be achievable, given access
-to enough   software projects.
-For example, here we apply a  time series analysis to   832 proprietary and 
-open source projects from GitHub repositories.  Data was gathered by sampling projects every week for an 
-average period of two years. The mined data contained the following attributes: issue reports, bugs reports, and enhancement requests for each week. Trends in this data were
-modeled using
-\textit{\underline{A}uto\underline{R}egressive \underline{I}ntegrated
-\underline{M}oving 
-\underline{A}verage} (ARIMA)~\cite{box2015time}
-(this is a standard method that has shown to  outperform other models 
-such as linear regression or random walk~\cite{kenmei2008trend, ho1998use, pai2006software, amin2013approach, 
-burtschy1997improving}). 
 Using this data, we offer the following contributions:
 \be
-\item In hundreds of software projects, we prove the existence of  simple and predictable trends in issues, bugs and enhancements.
-\item These different trends are closely associated. Hence, using past issue reports we can forecast (a)~future bugs and (b)~future enhancement requests.
+\item In hundreds of software projects, we prove the existence of predictable 
+trends in issues, bugs, and enhancements.
+\item These different trends are closely associated. Hence, using past issue 
+reports we can forecast the future existence of (a)~bugs and (b)~enhancement 
+requests.
+\item The forecasts made in this way only require  a frequency count of this 
+issue reports. They do not require an historical record of bugs found in the 
+project. Therefore, this kind of predictive model can be very easy to deploy 
+within 
+a project.
 \item
-The forecasts made in this way only require  a frequency count of this issue reports. They do not require an historical record of bugs found in the project. That is, this kind of predictive model is very easy to deploy within a project.
-\item
-In studies with 832 times series models generated separately for all our projects, we show that the
- forecasts made in this way are remarkably accurate.
+In studies with 832 projects, we show that the forecasts made using issues is 
+remarkably accurate. We find that, forecasting using issues statistically 
+similar (with $p<0.05$) to 
+forecasting with historical logs of bugs and enhancements.
 \ee
 The rest of this paper is structured as follows. 
  After some notes on the    motivation of this work, this paper's   research questions are presented  in \S\ref{mr}.   \tion{related}  discusses some   related work.   \tion{method} presents our experimental methodology. In 
 \tion{results}, we answer our research questions and discuss  lessons learned. In \tion{discuss} we discuss the practical implications of our results. In \tion{threats}, we present our threats to validity.  
  \tion{conclusion} presents   conclusions and directions for future work.
 
-Before beginning, we digress to comment that this paper focuses on ``near-term forecasts''.
-That is,    given the last 4 months of data from one project, we infer what is expected in the next month for that project. A bigger question would be ``for multiple projects, how to predict for many months into the future?''. While we have some  preliminary results on that bigger question, there are no definitive results to report at this time.  Accordingly, this paper reports
-only near-term forecast results.
+%Before beginning, we digress to comment that this paper focuses on ``near-term 
+%forecasts''. A bigger question would be ``for multiple projects, how to 
+%predict 
+%for many months into the future?''. While we have some  preliminary results on 
+%that bigger question, there are no definitive results to report at this time.  
+%Accordingly, this paper reports
+%only near-term forecast results.
 
 \subsection{Motivation and Research Questions}
 \label{mr}
 Why build yet another bug predictor? Why learn predictors for future bug reports using
-data from prior issues? In the literature there are  any number bug prediction methods 
+data from prior issues? In the literature there are any number bug prediction 
+methods 
 methods as witnessed by the plethora of papers in that area~\cite{krishna2017less, krishna2016too, menzies2007data, turhan2009relative, menzies2010defect}. 
 
 For large cloud-based environments of service 
 organizations supporting multiple languages and tools, we found that those 
 methods had certain significant drawbacks.
 Firstly, before anyone can use past bugs to forecast for future bugs,
-{\em they need access to past bugs}.  For this, they could use APIs provided by platforms like GitHub to obtain temporal logs issues. However, this is not sufficient. After mining issues, these need to be carefully curated to identify the bugs. We spent over two months at IBM to manually categorize logs of issues into bugs and enhancements. Due to the significant amount of time and effort required to do this, in this paper we explore what can be achieved {\em with just} logs of issues.
+{\em they need access to past bugs}.  For this, they could use APIs provided by 
+platforms like GitHub to obtain temporal logs issues. However, this is not 
+sufficient. After mining issues, these need to be carefully curated to identify 
+the bugs. We spent over two months at IBM to manually categorize over 
+100000 logs of issues into bugs and enhancements. Due to the significant 
+amount of time and effort required to do this, in this paper we explore what 
+can be achieved {\em with just} logs of issues.
 
 Secondly, there was the problem of commissioning standard defect predictors for 
 dozens of programming languages\footnote{Popular languages include Java, 
@@ -228,13 +253,15 @@ may be missing). In addition to that, maintaining all that software over all
 those languages would turn into an arduous task in itself.
 
 
-Problems like the above forced us to consider radical alternatives to 
-traditional defect prediction technology. In meetings to discuss those 
-alternatives, we came across a simple alternative --- forecast bugs by looking 
-at trends of past issue reports.
- We found that 
-by \textit{mining only for issues}, we can construct accurate models that 
-forecast for bugs and enhancements. To show that, this paper explores the following research questions.
+In meetings to discuss alternatives to (a) using traditional defect prediction 
+technology, and (b) having to manually categorize issues as bugs and 
+enhancement, we came 
+across a simple 
+alternative---forecast bugs by looking 
+at trends of past issue reports. We found that by \textit{mining only for 
+issues}, we can construct accurate models that forecast for bugs and 
+enhancements. To show that, this paper explores the following research 
+questions.
 
 \subsection*{RQ1: Are there temporal trends in our data?}
 
@@ -247,9 +274,9 @@ forecast for bugs and enhancements. To show that, this paper explores the follow
 	opensource 
 	projects, we use the mined attributes (issues, bugs, and enhancements) and for each of these attributes we 
 	construct a time series model with ARIMA. Then, we used these ARIMA models 
-	to forecast future issues, bugs, and enhancements (Note: this is different from RQ3, there we 
-	built an ARIMA model only on issues and used that to forecast for bugs and 
-	enhancements).\\[-.2cm]
+	to forecast future issues, bugs, and enhancements. (Note: other than in RQ1, 
+	we built ARIMA models only on issues and used those to forecast for bugs and 
+	enhancements.)\\[-.2cm]
 	
 \end{itemize}
 
@@ -353,21 +380,26 @@ very accurate for forecasting future bugs and enhancements.\\\hline
 compare the 
 errors between using time series model built with issues to 
 forecast for future values of bugs and enhancements with forecasts 
-using past temporal data of bugs and enhancements. As mentioned previously, it took us a significant amount of time to curate issue reports into bugs and enhancements. If the errors in using only issues for forecast is statistically comparable to using each time series separately, then we can establish that the time series trend of issues can indeed forecast for bugs and enhancements and that may save a lot of time and effort.
+using manually labeled past temporal data of bugs and enhancements. As 
+mentioned previously, it took us a significant amount of time to curate issue 
+reports into bugs and enhancements. If the errors in using only issues for 
+forecast is statistically comparable to using each time series separately, then 
+we can establish that the time series trend of issues can indeed forecast for 
+bugs and enhancements and that may save a lot of time and effort.
 
 \item[] \textit{\textbf{Approach:}} As before, for each of our 832 proprietary 
 and 
 opensource 
 projects, we construct two time series models with ARIMA:
 \be
-\item[] a) $\mathit{ISSUE}$ : ARIMA model built using past issue report trend.
-\item[] b) $\mathit{LOCAL}$ : ARIMA model built using past bug report trend and 
-past enhancement request trend.
+\item[] a) $\mathit{ISSUE}$ : ARIMA model built using past issue report trends.
+\item[] b) $\mathit{LABELED}$ : ARIMA model built using manually labeled 
+historical bug reports and enhancement requests.
 \ee
 
 We use both of these models to forecast for future bugs and enhancements. 
 Then, we compute the error in forecasts with   $\mathit{ISSUE}$ and 
-$\mathit{LOCAL}$. Finally, we use a statistical test (Welch's t-test) to 
+$\mathit{LABELED}$. Finally, we use a statistical test (Welch's t-test) to 
 compare the errors.
  
 \end{itemize}
@@ -380,7 +412,9 @@ compare the errors.
 			\hline
 			 
 			\rowcolor{Gray}   \textit{\textbf{Result:}} Forecast errors of 
-$\mathit{ISSUE}$ are statistically similar to $\mathit{LOCAL}$. That is, we can avoid all the complexity of bug mining by just building times series models from issue reports. \\\hline
+$\mathit{ISSUE}$ are statistically similar to $\mathit{LABELED}$. That is, we 
+can avoid all the complexity of bug mining by just building times series models 
+from issue reports. \\\hline
 		\end{tabular}
 	\end{center}
 \end{minipage}\bigstrut[t]
@@ -615,7 +649,10 @@ from using these measures for the following reasons:
 
 \bi
 \item MAE has a clear interpretation as the average absolute difference between $Y_i$ and $\hat{Y_i}$. Many researchers~\cite{willmott2005advantages,willmott2006use} find this measure desirable because its interpretation is clear. However, researchers frequently compute and misinterpret the Root Mean Squared Error (RMSE), which is not the average absolute error~\cite{willmott2005advantages,willmott2006use}.
-\item In cases where the true value is close to or equal to zero, measures like MMRE fail to provide a accurate description of the error. When true values are zero, MMRE is extremely large; this skews the errors and risks leading to spurious interpretation of the errors. 
+\item In cases where the true value is close to or equal to zero, measures like 
+MMRE fail to provide an accurate description of the error. When true values are 
+zero, MMRE is extremely large; this skews the errors and risks leading to 
+spurious interpretation of the errors. 
 \ei
 
 \input{tex/expt_setup.tex}
@@ -642,7 +679,7 @@ time series.
 
 After the rolling widow approach described above terminates, we gather the MAE 
 values and compute the Mean MAE values and the spread 
-computed as the variance in of the MAE values. These values are 
+(computed as the variance of the MAE values). These values are 
 plotted for all the projects as shown in Figures \ref{fig:rq1} and \ref{fig:rq3}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -659,7 +696,8 @@ plotted for all the projects as shown in Figures \ref{fig:rq1} and \ref{fig:rq3}
 		these attributes, a time series model such as ARIMA, which is equipped to 
 		make accurate forecasts, should lead to low errors when we use past data to 
 		forecast for the future. For this purpose, we ask if we may construct a 
-		time series model using past data from the same attributes (called $\mathit{LOCAL}$). That is, we attempt 
+		time series model using past data from the same attributes (called 
+		$\mathit{LABELED}$). That is, we attempt 
 		to: (a) forecast for future the number of bugs using past trends in bug 
 		reports, (b) forecast for future the number of issue reports using past 
 		trends in issue reports, and (c) forecast for future the number of 
@@ -811,29 +849,44 @@ question as follows:\\[0.1cm]
 \subsection*{\normalsize{RQ4: Are the forecasts using issues better than with past temporal data?}}
 \input{tex/rq4.tex}
 
-In RQ1, we established that ARIMA model built on past bug and enhancement data (called $\mathit{LOCAL}$) can forecast for future bugs and enhancements with very low errors (see~\fig{rq1}). Further, in RQ3, we showed that an ARIMA model can built on past issue data (called $\mathit{ISSUE}$) can also forecast for future bugs and enhancements with low magnitudes of average errors (see~\fig{rq3}). This research question is a natural extension of those two results. Here we compare errors in forecasts obtained from $\mathit{ISSUE}$ and $\mathit{LOCAL}$ where: 
+In RQ1, we established that ARIMA model built on past bug and enhancement data 
+(called $\mathit{LABELED}$) can forecast for future bugs and enhancements with 
+very low errors (see~\fig{rq1}). Further, in RQ3, we showed that an ARIMA model 
+can built on past issue data (called $\mathit{ISSUE}$) can also forecast for 
+future bugs and enhancements with low magnitudes of average errors 
+(see~\fig{rq3}). This research question is a natural extension of those two 
+results. Here we compare errors in forecasts obtained from $\mathit{ISSUE}$ and 
+$\mathit{LABELED}$ where: 
 \be
 \item[] a) $\mathit{ISSUE}$ : ARIMA model built using past issue report trend.
-\item[] b) $\mathit{LOCAL}$ : ARIMA model built using past bug report trends 
+\item[] b) $\mathit{LABELED}$ : ARIMA model built using past bug report trends 
 and past enhancement request trends.
 \ee
 
 To perform this comparison, we use both of these models to forecast for future bugs and enhancements. 
-The construction of $\mathit{LOCAL}$ model is described RQ1 and RQ3 describes 
+The construction of $\mathit{LABELED}$ model is described RQ1 and RQ3 describes 
 the construction of $\mathit{ISSUE}$. We compute the error in forecasts with  
-$\mathit{ISSUE}$ and $\mathit{LOCAL}$ and use a parametric statistical hypothesis test 
+$\mathit{ISSUE}$ and $\mathit{LABELED}$ and use a parametric statistical 
+hypothesis test 
 (Welch's t-test) to compare the errors\footnote{We use a parametric test 
 because it is known that the errors of ARIMA models have a normal 
 distribution~\cite{box2015time}}. In order to conduct the hypothesis test we use the following hypothesis:
 \begin{quote}
 $\mathcal{H}$: The distributions of errors in using $\mathit{ISSUE}$ is significantly larger
-than errors in using $\mathit{LOCAL}$.
+than errors in using $\mathit{LABELED}$.
 \end{quote}
 
 If the $p~value$ of the above hypothesis is less than 0.05, then we may reject 
-that hypothesis and assert that, \textit{``the distributions of errors in using $\mathit{ISSUE}$ is statistically similar to errors in using $\mathit{LOCAL}$.''}
+that hypothesis and assert that, \textit{``the distributions of errors in using 
+$\mathit{ISSUE}$ is statistically similar to errors in using 
+$\mathit{LABELED}$.''}
 
-The distribution of errors for forecasting bugs and enhancements in proprietary and opensource projects are shown \fig{rq4}. It is immediately noticeable the expected value of the errors are close to zero in both $\mathit{ISSUE}$ and $\mathit{LOCAL}$ for all cases. Additionally, the $p~values$ are always less than 0.05 in all the cases. Therefore, the answer to this research question is:\\[0.1cm]
+The distribution of errors for forecasting bugs and enhancements in proprietary 
+and opensource projects are shown \fig{rq4}. It is immediately noticeable the 
+expected value of the errors are close to zero in both $\mathit{ISSUE}$ and 
+$\mathit{LABELED}$ for all cases. Additionally, the $p~values$ are always less 
+than 0.05 in all the cases. Therefore, the answer to this research question 
+is:\\[0.1cm]
 \noindent\begin{minipage}{\linewidth}
 	\begin{center}
 		\begin{tabular}{p{0.95\linewidth}}
